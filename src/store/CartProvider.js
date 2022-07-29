@@ -14,14 +14,14 @@ const cartReducer = (state,action)=>{
       totalAmount: updatedTotalAmount
     }
   }
-  return
+  return defaultCartState
 };
 
 const CartProvider = (props) => {
   const [cartState,dispatchCartAction]=useReducer(cartReducer,defaultCartState)
   const addCartItemHandler = (item) => {
     dispatchCartAction({
-      type: 'ADD_CART_ITEM', item:item
+      type: 'ADD-CART-ITEM', item:item
     });
   };
 
